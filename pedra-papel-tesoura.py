@@ -14,27 +14,28 @@ while not fim:
     if jogador_1 not in poderes:
         fim = True
         break
-    for i in range(len(poderes)):
-        if jogador_1 == poderes[i]:
+    for i, v in enumerate(poderes):
+        if jogador_1 == v:
             jogador_1 = i
     if jogador_1 < jogador_2 and jogador_1 != 0:
         if jogador_1 != 0:
             jogador_2_vitorias += 1
-            print("jog 2 %i " % jogador_2_vitorias)
+            print("Jogador 2 venceu este Round. Total de vitórias: %i " % jogador_2_vitorias)
         else:
             jogador_1_vitorias += 1
-            print("jog 1 %i " % jogador_1_vitorias)
+            print("Jogador 1 venceu este Round. Total de vitórias: %i " % jogador_1_vitorias)
     elif jogador_2 < jogador_1 and jogador_2 != 0:
         if jogador_2 != 0:
             jogador_1_vitorias += 1
-            print("jog 1 %i " % jogador_1_vitorias)
+            print("Jogador 1 venceu este Round. Total de vitórias: %i " % jogador_1_vitorias)
         else:
             jogador_2_vitorias += 1
-            print("jog 2 %i " % jogador_2_vitorias)
+            print("Jogador 2 venceu este Round. Total de vitórias: %i " % jogador_2_vitorias)
     else:
-        print(empates)
         empates += 1
         partida = 0
+        print("Foi um empate! Tente novamente!")
+        print("Total de empates: %i" % empates)
     if partida == 10:
         fim = True
 if jogador_1_vitorias > jogador_2_vitorias:
